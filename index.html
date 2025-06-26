@@ -1,0 +1,219 @@
+<head>
+    <style>
+        body {
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .required {
+            color: red;
+            margin-left: 4px;
+          }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 12px 14px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #FF5800;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #C8CEC1;
+        }
+
+        .button-container {
+            text-align: right;
+        }
+        button{
+            background-color: #FF5800;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
+
+<form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DAY000005eJCL" 
+        method="POST"
+        onsubmit="return validateConsent();">
+    <input type="hidden" name="oid" value="00DAY000005eJCL" />
+    <input type="hidden" name="retURL" value="https://www.afdas.com/" />
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--<input type="hidden" name="debug" value="1" /> -->
+    <!--<input type="hidden" name="debugEmail" value="pocwtl@yopmail.com" /> -->
+    <!--  ----------------------------------------------------------------------  -->
+
+    <input type="hidden" id="lead_source" name="lead_source" value="Website" />
+    <input type="hidden" name="recordType" id="recordType" value="012AY0000032Igf" />
+
+    <label for="last_name">Salutation<span class="required">*</span></label><select id="salutation" name="salutation" required>
+        <option value="">- Aucun -</option>
+        <option value="CIV_1">Monsieur</option>
+        <option value="CIV_2">Madame</option>
+    </select>
+    <br />
+
+    <label for="last_name">Nom<span class="required">*</span></label>
+    <input id="last_name" maxlength="80" name="last_name" size="20" type="text" required /><br />
+
+    <label for="first_name">Prénom<span class="required">*</span></label>
+    <input id="first_name" maxlength="80" name="first_name" size="20" type="text" required /><br />
+
+    <label for="email">Adresse e-mail<span class="required">*</span></label>
+    <input id="email" maxlength="80" name="email" size="20" type="text" required /><br />
+
+    <label for="phone">Téléphone<span class="required">*</span></label>
+    <input id="phone" maxlength="12" name="phone" size="20" type="text" required /><br />
+
+    <label for="company">Société<span class="required">*</span></label>
+    <input id="company" maxlength="80" name="company" size="20" type="text" required /><br />
+
+    <label for="company">Siren<span class="required">*</span></label>
+    <input id="00NAY00000DMsjp" maxlength="9" name="00NAY00000DMsjp" size="20" type="text" required /><br />
+
+    <input type="hidden" id="city" name="city" value="FR" /><br />
+
+    <input type="hidden" id="country_code" name="country_code" value="FR" />
+    <label for="state_code">Région<span class="required">*</span></label>
+    <select id="state_code" name="state_code" required >
+        <option value="">- Aucun -</option>
+        <option value="FR-ARA">AUVERGNE RHONE ALPES</option>
+        <option value="FR-BFC">BOURGOGNE FRANCHE COMTE</option>
+        <option value="FR-BRE">BRETAGNE</option>
+        <option value="FR-COR">CORSE</option>
+        <option value="FR-CVL">CENTRE VAL DE LOIRE</option>
+        <option value="FR-ETR">ETRANGER</option>
+        <option value="44">GRAND EST</option>
+        <option value="FR-GUA">GUADELOUPE</option>
+        <option value="FR-GUF">GUYANE</option>
+        <option value="32">HAUTS DE FRANCE</option>
+        <option value="IF">ILE DE FRANCE</option>
+        <option value="FR-LRE">LA REUNION</option>
+        <option value="FR-MAY">MAYOTTE</option>
+        <option value="FR-MON">MONACO</option>
+        <option value="FR-MTQ">MARTINIQUE</option>
+        <option value="FR-NAQ">NOUVELLE AQUITAINE</option>
+        <option value="FR-NCA">NOUVELLE CALÉDONIE</option>
+        <option value="28">NORMANDIE</option>
+        <option value="FR-OCC">OCCITANIE</option>
+        <option value="FR-PAQ">PROVENCE ALPES COTE D'AZUR</option>
+        <option value="FR-PDL">PAYS DE LA LOIRE</option>
+        <option value="FR-PFR">POLYNÉSIE FRANÇAISE</option>
+        <option value="FR-SBA">SAINT-BARTHÉLEMY</option>
+        <option value="FR-SMA">SAINT-MARTIN</option>
+        <option value="FR-SPM">SAINT-PIERRE-ET-MIQUELON</option>
+        <option value="FR-WEF">WALLIS-ET-FUTUNA</option>
+    </select>
+    <br />
+
+    <label>
+        
+        <input type="checkbox" id="consent" name="consent" onclick="toggleModal(this)">
+        J'accepte de recevoir des e-mails commerciaux/marketing
+        <span class="required">*</span>
+    </label><br/>
+
+    <!-- Hidden field for selected checkboxes -->
+  <input type="hidden" name="00NAY00000DMiOE" id="newsletterValues" />
+
+    <div class="button-container">
+        <input type="submit" name="submit" />
+    </div>
+</form>
+
+<!-- Modal -->
+<div id="newsletterModal" style="display:none; position:fixed; top:10%; left:50%; transform:translateX(-50%);
+     background:white; border:1px solid #ccc; padding:20px; z-index:1000; max-width:400px; box-shadow:0 0 10px rgba(0,0,0,0.3);">
+  <strong>Merci de choisir une ou plusieurs souscriptions:</strong><br/><br/>
+  <label><input type="checkbox" value="NL_1"> Bulletin d'information Artistes-Auteurs</label><br/>
+  <label><input type="checkbox" value="NL_2"> Bulletin d'information Intermittents du spectacle</label><br/>
+  <label><input type="checkbox" value="NL_3"> Bulletin d'information Journaliste Pigiste</label><br/>
+  <label><input type="checkbox" value="NL_4"> Etude prospective Normandie</label><br/>
+  <label><input type="checkbox" value="NL_5"> Informations/Accompagnements Afdas</label><br/>
+  <label><input type="checkbox" value="NL_6"> Newsletter Entreprises</label><br/>
+  <label><input type="checkbox" value="NL_7"> Newsletter Prestataires</label><br/><br/>
+
+    <div class="button-container">
+        <button onclick="saveSelection()">Save</button>
+        <button onclick="closeModal()">Cancel</button>
+    </div>
+</div>
+
+<script>
+    function toggleModal(checkbox) {
+      if (checkbox.checked) {
+        document.getElementById("newsletterModal").style.display = "block";
+      } else {
+        document.getElementById("newsletterModal").style.display = "none";
+        document.getElementById("newsletterValues").value = ""; // Clear on uncheck
+      }
+    }
+  
+    function saveSelection() {
+      const checkboxes = document.querySelectorAll('#newsletterModal input[type="checkbox"]:checked');
+      const values = Array.from(checkboxes).map(cb => cb.value).join(';');
+      document.getElementById("newsletterValues").value = values;
+      document.getElementById("newsletterModal").style.display = "none";
+    }
+  
+    function closeModal() {
+      document.getElementById("consent").checked = false;
+      document.getElementById("newsletterModal").style.display = "none";
+      document.getElementById("newsletterValues").value = "";
+    }
+  
+    function validateConsent() {
+      if (!document.getElementById("consent").checked) {
+        alert("Vous devez accepter de recevoir des emails avant to continuer.");
+        return false;
+      }
+      if (!document.getElementById("newsletterValues").value) {
+        alert("Veuillez sélectionner au moins une newsletter.");
+        return false;
+      }
+      return true;
+    }
+  </script>
