@@ -1,226 +1,174 @@
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
 <head>
-  <style>
-      body {
-          font-family: "Segoe UI", Roboto, Arial, sans-serif;
-          background-color: #fff;
-          padding: 20px;
-      }
-
-      form {
-          max-width: 500px;
-          margin: auto;
-      }
-
-      label {
-          display: block;
-          margin-bottom: 6px;
-          font-weight: bold;
-          font-size: 15px;
-      }
-
-      .required {
-          color: red;
-          margin-left: 4px;
+    <style>
+        body {
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: #fff;
+            padding: 20px;
         }
 
-      input[type="text"],
-      input[type="email"],
-      input[type="tel"],
-      select {
-          width: 100%;
-          padding: 12px 14px;
-          font-size: 15px;
-          border: 1px solid #ccc;
-          border-radius: 8px;
-          margin-bottom: 20px;
-          box-sizing: border-box;
-      }
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
 
-      input[type="submit"] {
-          background-color: #FF5800;
-          color: white;
-          border: none;
-          padding: 12px 20px;
-          border-radius: 8px;
-          font-size: 15px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-      }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            font-size: 15px;
+        }
 
-      input[type="submit"]:hover {
-          background-color: #C8CEC1;
-      }
+        .required {
+            color: red;
+            margin-left: 4px;
+        }
 
-      .button-container {
-          text-align: right;
-      }
-      button{
-          background-color: #FF5800;
-          color: white;
-          border: none;
-          padding: 12px 20px;
-          border-radius: 8px;
-          font-size: 15px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-      }
-  </style>
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 12px 14px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #FF5800;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #C8CEC1;
+        }
+
+        .button-container {
+            text-align: right;
+        }
+
+        button {
+            background-color: #FF5800;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    </style>
 </head>
 
-<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
-function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+    function timestamp() {
+        var response = document.getElementById("g-recaptcha-response");
+        if (response == null || response.value.trim() == "") {
+            var elems = JSON.parse(
+                document.getElementsByName("captcha_settings")[0].value
+            );
+            elems["ts"] = JSON.stringify(new Date().getTime());
+            document.getElementsByName("captcha_settings")[0].value =
+                JSON.stringify(elems);
+        }
+    }
+    setInterval(timestamp, 500);
 </script>
-
-<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
 <!--  ----------------------------------------------------------------------  -->
 
-<form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DAY000005eJCL" 
-      method="POST"
-      onsubmit="return validateConsent();">
-  <input type=hidden name='captcha_settings' value='{"keyname":"POCWebToLead","fallback":"true","orgId":"00DAY000005eJCL","ts":""}'>
-  <input type="hidden" name="oid" value="00DAY000005eJCL" />
-  <input type="hidden" name="retURL" value="https://www.afdas.com/" />
+<form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DG5000004xlBt" method="POST">
+    <input type="hidden" name="captcha_settings"
+        value='{"keyname":"AFDAS_DEV","fallback":"true","orgId":"00DG5000004xlBt","ts":""}' />
+    <input type="hidden" name="oid" value="00DG5000004xlBt" />
+    <input type="hidden" name="retURL" value="https://www.afdas.com" />
+    <input type="hidden" id="city" name="city" value="FR" />
+    <input type="hidden" id="country_code" name="country_code" value="FR" />
+    <input type="hidden" id="lead_source" name="lead_source" value="PageAlternance" />
+    <input type="hidden" name="recordType" id="recordType" value="012G5000003qGtNIAU" />
+    <input type="hidden" id="salutation" name="salutation" value="CIV_3" />
 
-  <!--  ----------------------------------------------------------------------  -->
-  <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-  <!--  these lines if you wish to test in debug mode.                          -->
-  <!--<input type="hidden" name="debug" value="1" /> -->
-  <!--<input type="hidden" name="debugEmail" value="pocwtl@yopmail.com" /> -->
-  <!--  ----------------------------------------------------------------------  -->
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail" value="a.chergui@afdas.com">     -->
+    <!--  ----------------------------------------------------------------------  -->
 
-  <input type="hidden" id="city" name="city" value="FR" />
-  <input type="hidden" id="country_code" name="country_code" value="FR" />
-  <input type="hidden" id="lead_source" name="lead_source" value="Website" />
-  <input type="hidden" name="recordType" id="recordType" value="012AY0000032Igf" />
-  <input type="hidden" id="salutation" name="salutation" value="CIV_3" />
-  <input type="hidden" name="00NAY00000DMiOE" id="newsletterValues" />
+    <label for="last_name">Nom<span class="required">*</span></label>
+    <input id="last_name" maxlength="80" name="last_name" size="20" type="text" required /><br />
 
+    <label for="first_name">Prénom<span class="required">*</span></label>
+    <input id="first_name" maxlength="80" name="first_name" size="20" type="text" required /><br />
 
-  <label for="last_name">Nom<span class="required">*</span></label>
-  <input id="last_name" maxlength="80" name="last_name" size="20" type="text" required /><br />
+    <label for="email">Adresse e-mail<span class="required">*</span></label>
+    <input id="email" maxlength="80" name="email" size="20" type="email" required /><br />
 
-  <label for="first_name">Prénom<span class="required">*</span></label>
-  <input id="first_name" maxlength="80" name="first_name" size="20" type="text" required /><br />
+    <label for="phone">Téléphone<span class="required">*</span></label>
+    <input type="tel" id="phone" name="phone" required pattern="^(\+33|0)[1-9](\d{2}){4}$"
+        placeholder="+33 6 00 00 00 00" /><br />
 
-  <label for="email">Adresse e-mail<span class="required">*</span></label>
-  <input id="email" maxlength="80" name="email" size="20" type="email" required /><br />
+    <label for="company">Société<span class="required">*</span></label>
+    <input id="company" maxlength="80" name="company" size="20" type="text" required /><br />
 
-  <label for="phone">Téléphone<span class="required">*</span></label>
-  <input type="tel" id="phone" name="phone" required
-     pattern="^(\+33|0)[1-9](\d{2}){4}$"
-     placeholder="+33 6 12 34 56 78" /><br />
+    <label for="Siren">Siren<span class="required">*</span></label>
+    <input id="00NAY00000DMsjp" maxlength="9" name="00NAY00000DMsjp" size="20" type="text" required /><br />
 
-  <label for="company">Société<span class="required">*</span></label>
-  <input id="company" maxlength="80" name="company" size="20" type="text" required /><br />
+    <label for="Region">Région<span class="required">*</span></label>
+    <select id="00NG500000Fu4KY" name="00NG500000Fu4KY" title="Région">
+        <option value="">- Aucun -</option>
+        <option value="01">01 - GUADELOUPE</option>
+        <option value="02">02 - MARTINIQUE</option>
+        <option value="03">03 - GUYANE</option>
+        <option value="04">04 - LA RÉUNION</option>
+        <option value="06">06 - MAYOTTE</option>
+        <option value="11">11 - ÎLE-DE-FRANCE</option>
+        <option value="24">24 - CENTRE-VAL DE LOIRE</option>
+        <option value="27">27 - BOURGOGNE-FRANCHE-COMTÉ</option>
+        <option value="28">28 - NORMANDIE</option>
+        <option value="32">32 - HAUTS-DE-FRANCE</option>
+        <option value="44">44 - GRAND EST</option>
+        <option value="52">52 - PAYS DE LA LOIRE</option>
+        <option value="53">53 - BRETAGNE</option>
+        <option value="75">75 - NOUVELLE-AQUITAINE</option>
+        <option value="76">76 - OCCITANIE</option>
+        <option value="84">84 - AUVERGNE-RHÔNE-ALPES</option>
+        <option value="93">93 - PROVENCE-ALPES-CÔTE D&#39;AZUR</option>
+        <option value="94">94 - CORSE</option>
+        <option value="975">975 - SAINT-PIERRE-ET-MIQUELON</option>
+        <option value="977">977 - SAINT-BARTHÉLEMY</option>
+        <option value="978">978 - SAINT-MARTIN</option>
+        <option value="986">986 - WALLIS-ET-FUTUNA</option>
+        <option value="987">987 - POLYNÉSIE FRANÇAISE</option>
+        <option value="988">988 - NOUVELLE CALÉDONIE</option>
+        <option value="98">99 - MONACO</option>
+        <option value="99">99 - ETRANGER</option>
+    </select><br />
 
-  <label for="Siren">Siren<span class="required">*</span></label>
-  <input id="00NAY00000DMsjp" maxlength="9" name="00NAY00000DMsjp" size="20" type="text" required /><br />
+    <div style="display: flex; justify-content: center;">
+        <div class="g-recaptcha" data-sitekey="6LeQIqUrAAAAAGzI4wTJP4jwtXvWYzRAlFXzElrS"></div>
+    </div>
+    <br />
+    <div class="button-container">
+        <input type="submit" name="submit" />
+    </div>
 
-  
-  <label for="state_code">Région<span class="required">*</span></label>
-  <select id="state_code" name="state_code" required >
-      <option value="">- Aucun -</option>
-      <option value="84">AUVERGNE RHONE ALPES</option>
-      <option value="53">BRETAGNE</option>
-      <option value="27">BOURGOGNE FRANCHE COMTE</option>
-      <option value="24">CENTRE VAL DE LOIRE</option>
-      <option value="94">CORSE</option>
-      <option value="44">GRAND EST</option>
-      <option value="03">GUYANE</option>
-      <option value="01">GUADELOUPE</option>
-      <option value="32">HAUTS DE FRANCE</option>
-      <option value="11">ILE DE FRANCE</option>
-      <option value="04">LA REUNION</option>
-      <option value="02">MARTINIQUE</option>
-      <option value="06">MAYOTTE</option>
-      <option value="98">MONACO</option>
-      <option value="28">NORMANDIE</option>
-      <option value="988">NOUVELLE CALÉDONIE</option>
-      <option value="75">NOUVELLE AQUITAINE</option>
-      <option value="76">OCCITANIE</option>
-      <option value="52">PAYS DE LA LOIRE</option>
-      <option value="987">POLYNÉSIE FRANÇAISE</option>
-      <option value="93">PROVENCE ALPES COTE D'AZUR</option>
-      <option value="977">SAINT-BARTHÉLEMY</option>
-      <option value="978">SAINT-MARTIN</option>
-      <option value="975">SAINT-PIERRE-ET-MIQUELON</option>
-      <option value="986">WALLIS-ET-FUTUNA</option>
-      <option value="99">ETRANGER</option>
-  </select>
-  <br />
-
-  <label>
-      
-      <input type="checkbox" id="consent" name="consent" onclick="toggleModal(this)">
-      J'accepte de recevoir des e-mails commerciaux/marketing
-      <span class="required">*</span>
-  </label><br/>
-
- 
-<div style="display: flex; justify-content: center;">
-  <div class="g-recaptcha" data-sitekey="6LdSPW4rAAAAAN1QXuk0EPHD8TNAw2qolfq-yrBF"></div>
-</div>
-<br/>
-  <div class="button-container">
-      <input type="submit" name="submit" />
-  </div>
 </form>
-
-<!-- Modal -->
-<div id="newsletterModal" style="display:none; position:fixed; top:10%; left:50%; transform:translateX(-50%);
-   background:white; border:1px solid #ccc; padding:20px; z-index:1000; max-width:400px; box-shadow:0 0 10px rgba(0,0,0,0.3);">
-<strong>Merci de choisir une ou plusieurs souscriptions:</strong><br/><br/>
-<label><input type="checkbox" value="NL_1"> Bulletin d'information Artistes-Auteurs</label><br/>
-<label><input type="checkbox" value="NL_2"> Bulletin d'information Intermittents du spectacle</label><br/>
-<label><input type="checkbox" value="NL_3"> Bulletin d'information Journaliste Pigiste</label><br/>
-<label><input type="checkbox" value="NL_4"> Etude prospective Normandie</label><br/>
-<label><input type="checkbox" value="NL_5"> Informations/Accompagnements Afdas</label><br/>
-<label><input type="checkbox" value="NL_6"> Newsletter Entreprises</label><br/>
-<label><input type="checkbox" value="NL_7"> Newsletter Prestataires</label><br/><br/>
-
-  <div class="button-container">
-      <button onclick="saveSelection()">Save</button>
-      <button onclick="closeModal()">Cancel</button>
-  </div>
-</div>
-
-<script>
-  function toggleModal(checkbox) {
-    if (checkbox.checked) {
-      document.getElementById("newsletterModal").style.display = "block";
-    } else {
-      document.getElementById("newsletterModal").style.display = "none";
-      document.getElementById("newsletterValues").value = ""; // Clear on uncheck
-    }
-  }
-
-  function saveSelection() {
-    const checkboxes = document.querySelectorAll('#newsletterModal input[type="checkbox"]:checked');
-    const values = Array.from(checkboxes).map(cb => cb.value).join(';');
-    document.getElementById("newsletterValues").value = values;
-    document.getElementById("newsletterModal").style.display = "none";
-  }
-
-  function closeModal() {
-    document.getElementById("consent").checked = false;
-    document.getElementById("newsletterModal").style.display = "none";
-    document.getElementById("newsletterValues").value = "";
-  }
-
-  function validateConsent() {
-    if (!document.getElementById("consent").checked) {
-      alert("Vous devez accepter de recevoir des emails avant to continuer.");
-      return false;
-    }
-    if (!document.getElementById("newsletterValues").value) {
-      alert("Veuillez sélectionner au moins une newsletter.");
-      return false;
-    }
-    return true;
-  }
-</script>
