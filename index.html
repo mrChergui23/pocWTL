@@ -96,8 +96,8 @@
 <!--  ----------------------------------------------------------------------  -->
 
 <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DG5000004xlBt" method="POST">
-    <input type="hidden" name="captcha_settings"
-        value='{"keyname":"AFDAS_DEV","fallback":"true","orgId":"00DG5000004xlBt","ts":""}' />
+    <!-- <input type="hidden" name="captcha_settings"
+        value='{"keyname":"AFDAS_DEV","fallback":"true","orgId":"00DG5000004xlBt","ts":""}' /> -->
     <input type="hidden" name="oid" value="00DG5000004xlBt" />
     <input type="hidden" name="retURL" value="https://www.afdas.com" />
     <input type="hidden" id="city" name="city" value="FR" />
@@ -109,8 +109,8 @@
     <!--  ----------------------------------------------------------------------  -->
     <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
     <!--  these lines if you wish to test in debug mode.                          -->
-    <!--  <input type="hidden" name="debug" value=1>                              -->
-    <!--  <input type="hidden" name="debugEmail" value="a.chergui@afdas.com">     -->
+     <input type="hidden" name="debug" value=1>                             
+      <input type="hidden" name="debugEmail" value="a.chergui@afdas.com">    
     <!--  ----------------------------------------------------------------------  -->
 
     <label for="last_name">Nom<span class="required">*</span></label>
@@ -163,9 +163,20 @@
         <option value="99">99 - ETRANGER</option>
     </select><br />
 
-    <div style="display: flex; justify-content: center;">
+    <label>
+        <input type="checkbox" id="consent_contact" name="consent_contact" required>
+        J'accepte d'être contacté par l'Afdas pour le suivi de ma demande, par téléphone ou par mail.
+        <span class="required">*</span>
+    </label><br/>
+
+    <label>
+        <input type="checkbox" id="consent_newsletter" name="consent_newsletter" >
+        J'accepte de recevoir des informations générales de la part de l'Afdas
+    </label><br/>
+
+<!--     <div style="display: flex; justify-content: center;">
         <div class="g-recaptcha" data-sitekey="6LeQIqUrAAAAAGzI4wTJP4jwtXvWYzRAlFXzElrS"></div>
-    </div>
+    </div> -->
     <br />
     <div class="button-container">
         <input type="submit" name="submit" />
