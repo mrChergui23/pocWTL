@@ -75,7 +75,7 @@
 </head>
 
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-<!-- <script src="https://www.google.com/recaptcha/api.js"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
     function timestamp() {
         var response = document.getElementById("g-recaptcha-response");
@@ -89,7 +89,12 @@
         }
     }
     setInterval(timestamp, 500);
-</script>  -->
+</script>
+<script>
+    function setConsentNewsLetter(checkbox) {
+        document.getElementById("consentNewsLetter").value = checkbox.checked ? 'Oui' : 'Non';
+    }
+</script>
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
 <!--  ----------------------------------------------------------------------  -->
@@ -101,14 +106,16 @@
     <input type="hidden" id="city" name="city" value="FR" />
     <input type="hidden" id="country_code" name="country_code" value="FR" />
     <input type="hidden" id="lead_source" name="lead_source" value="PageAlternance" />
-    <input type="hidden" name="recordType" id="recordType" value="012G5000003qGtNIAU" />
+    <input type="hidden" name="recordType" id="recordType" value="012G5000003qGtN" />
     <input type="hidden" id="salutation" name="salutation" value="CIV_3" />
+    <input type="hidden" id="consentContact" name="00NG500000GWeyn" value="Oui" />
+    <input type="hidden" id="consentNewsLetter" name="00NG500000GWfA5" value="Non" />
 
     <!--  ----------------------------------------------------------------------  -->
     <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
     <!--  these lines if you wish to test in debug mode.                          -->
-    <input type="hidden" name="debug" value=1>                             
-    <input type="hidden" name="debugEmail" value="pocwtl@yopmail.com">    
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail" value="sf.monitoring@afdas.com"> --> 
     <!--  ----------------------------------------------------------------------  -->
 
     <label for="last_name">Nom<span class="required">*</span></label>
@@ -168,13 +175,13 @@
     </label><br/>
 
     <label>
-        <input type="checkbox" id="consent_newsletter" name="consent_newsletter" >
-        J'accepte de recevoir des informations générales de la part de l'Afdas ACH
+        <input type="checkbox" id="consent_newsletter" name="consent_newsletter" onclick="setConsentNewsLetter(this)" >
+        J'accepte de recevoir des informations générales de la part de l'Afdas
     </label><br/>
 
-<!--     <div style="display: flex; justify-content: center;">
+    <div style="display: flex; justify-content: center;">
         <div class="g-recaptcha" data-sitekey="6LeQIqUrAAAAAGzI4wTJP4jwtXvWYzRAlFXzElrS"></div>
-    </div> -->
+    </div> 
     <br />
     <div class="button-container">
         <input type="submit" name="submit" />
