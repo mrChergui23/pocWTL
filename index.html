@@ -98,18 +98,18 @@
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
 <!--  ----------------------------------------------------------------------  -->
-
-<form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DG5000004xlBt" method="POST">
-    <!-- <input type="hidden" name="captcha_settings" value='{"keyname":"AFDAS_DEV","fallback":"true","orgId":"00DG5000004xlBt","ts":""}' />  -->
-    <input type="hidden" name="oid" value="00DG5000004xlBt" />
+<body>
+<form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DG5000005SauP" method="POST">
+    <input type=hidden name='captcha_settings' value='{"keyname":"AFDAS_PREPROD","fallback":"true","orgId":"00DG5000005SauP","ts":""}'>
+    <input type="hidden" name="oid" value="00DG5000005SauP" />
     <input type="hidden" name="retURL" value="https://www.afdas.com" />
     <input type="hidden" id="city" name="city" value="FR" />
     <input type="hidden" id="country_code" name="country_code" value="FR" />
     <input type="hidden" id="lead_source" name="lead_source" value="PageAlternance" />
-    <input type="hidden" name="recordType" id="recordType" value="012G5000003qGtN" />
+    <input type="hidden" name="recordType" id="recordType" value="012G5000004L4Bn" />
     <input type="hidden" id="salutation" name="salutation" value="CIV_3" />
-    <input type="hidden" id="consentContact" name="00NG500000GWeyn" value="Oui" />
-    <input type="hidden" id="consentNewsLetter" name="00NG500000GWfA5" value="Non" />
+    <input type="hidden" id="consentContact" name="00NG500000IDhKb" value="Oui" />
+    <input type="hidden" id="consentNewsLetter" name="00NG500000IDhKa" value="Non" />
 
     <!--  ----------------------------------------------------------------------  -->
     <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
@@ -124,48 +124,46 @@
     <label for="first_name">Prénom<span class="required">*</span></label>
     <input id="first_name" maxlength="80" name="first_name" size="20" type="text" required /><br />
 
-    <label for="email">Adresse e-mail<span class="required">*</span></label>
-    <input id="email" maxlength="80" name="email" size="20" type="email" required /><br />
+	<label for="email">Adresse e-mail<span class="required">*</span></label>
+    <input id="email" maxlength="80" name="email" size="20" type="email" required placeholder="exemple@domaine.com"/>
 
     <label for="phone">Téléphone<span class="required">*</span></label>
-    <input type="tel" id="phone" name="phone" required pattern="^(\+33|0)[1-9](\d{2}){4}$"
-        placeholder="+33 6 00 00 00 00" /><br />
+    <input type="tel" id="phone" name="phone" required placeholder="+indicatif pays suivi du numéro" />
+	<br />
 
     <label for="company">Société<span class="required">*</span></label>
     <input id="company" maxlength="80" name="company" size="20" type="text" required /><br />
 
     <label for="Siren">Siren<span class="required">*</span></label>
-    <input id="00NG500000FuIzK" maxlength="9" name="00NG500000FuIzK" size="20" type="text" required /><br />
+	<input id="siren" name="00NG500000IDhKe"
+		   type="text"
+		   required
+		   maxlength="9"
+		   minlength="9"
+		   size="20"
+		   placeholder="123456789" />
+	<br />
 
     <label for="Region">Région<span class="required">*</span></label>
-    <select id="00NG500000Fu4KY" name="00NG500000Fu4KY" title="Région">
-        <option value="">- Aucun -</option>
-        <option value="01">01 - GUADELOUPE</option>
-        <option value="02">02 - MARTINIQUE</option>
-        <option value="03">03 - GUYANE</option>
-        <option value="04">04 - LA RÉUNION</option>
-        <option value="06">06 - MAYOTTE</option>
-        <option value="11">11 - ÎLE-DE-FRANCE</option>
-        <option value="24">24 - CENTRE-VAL DE LOIRE</option>
-        <option value="27">27 - BOURGOGNE-FRANCHE-COMTÉ</option>
-        <option value="28">28 - NORMANDIE</option>
-        <option value="32">32 - HAUTS-DE-FRANCE</option>
-        <option value="44">44 - GRAND EST</option>
-        <option value="52">52 - PAYS DE LA LOIRE</option>
-        <option value="53">53 - BRETAGNE</option>
-        <option value="75">75 - NOUVELLE-AQUITAINE</option>
-        <option value="76">76 - OCCITANIE</option>
-        <option value="84">84 - AUVERGNE-RHÔNE-ALPES</option>
-        <option value="93">93 - PROVENCE-ALPES-CÔTE D&#39;AZUR</option>
-        <option value="94">94 - CORSE</option>
-        <option value="975">975 - SAINT-PIERRE-ET-MIQUELON</option>
-        <option value="977">977 - SAINT-BARTHÉLEMY</option>
-        <option value="978">978 - SAINT-MARTIN</option>
-        <option value="986">986 - WALLIS-ET-FUTUNA</option>
-        <option value="987">987 - POLYNÉSIE FRANÇAISE</option>
-        <option value="988">988 - NOUVELLE CALÉDONIE</option>
-        <option value="98">99 - MONACO</option>
-        <option value="99">99 - ETRANGER</option>
+    <select id="00NG500000IDhKd" name="00NG500000IDhKd" title="Région" required>
+		<option value="">- Aucun -</option>
+		<option value="84">AUVERGNE-RHÔNE-ALPES</option>
+		<option value="27">BOURGOGNE-FRANCHE-COMTÉ</option>
+		<option value="53">BRETAGNE</option>
+		<option value="24">CENTRE-VAL DE LOIRE</option>
+		<option value="94">CORSE</option>
+		<option value="44">GRAND EST</option>
+		<option value="32">HAUTS-DE-FRANCE</option>
+		<option value="11">ÎLE-DE-FRANCE</option>
+		<option value="28">NORMANDIE</option>
+		<option value="75">NOUVELLE-AQUITAINE</option>
+		<option value="76">OCCITANIE</option>
+		<option value="52">PAYS DE LA LOIRE</option>
+		<option value="93">PROVENCE-ALPES-CÔTE D&#39;AZUR</option>
+		<option value="01">GUADELOUPE</option>
+		<option value="02">MARTINIQUE</option>
+		<option value="03">GUYANE</option>
+		<option value="04">LA RÉUNION</option>
     </select><br />
 
     <label>
@@ -180,7 +178,7 @@
     </label><br/>
 
     <div style="display: flex; justify-content: center;">
-        <div class="g-recaptcha" data-sitekey="6LeQIqUrAAAAAGzI4wTJP4jwtXvWYzRAlFXzElrS"></div>
+        <div class="g-recaptcha" data-sitekey="6Le7EfwrAAAAAE03fVlZ5_P4wDUmnWcpBiix9xSN"></div>
     </div> 
     <br />
     <div class="button-container">
@@ -188,3 +186,102 @@
     </div>
 
 </form>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const phoneRegex = /^(\+33[1-9][0-9]{8}|0[1-9][0-9]{8}|\+590[0-9]{9}|\+596[0-9]{9}|\+594[0-9]{9}|\+262[0-9]{9}|\+687[0-9]{6}|\+689[0-9]{6}|\+508[0-9]{6}|\+681[0-9]{6}|\+(?!33|590|596|594|262|687|689|508|681)[1-9][0-9]{6,14})$/;
+    const ERRORS = {
+        email: "L’adresse email saisie n’est pas au bon format.",
+        phone: "Le numéro de téléphone saisi n’est pas valide.",
+        siren: "Le SIREN saisi n’est pas reconnu. Vérifiez qu’il contient bien 9 chiffres valides."
+    };
+
+    // Algorithme de Luhn (SIREN)
+    function isValidLuhn(number) {
+        let sum = 0, shouldDouble = false;
+        for (let i = number.length - 1; i >= 0; i--) {
+            let digit = parseInt(number.charAt(i), 10);
+            if (isNaN(digit)) return false;
+            if (shouldDouble) {
+                digit *= 2;
+                if (digit > 9) digit -= 9;
+            }
+            sum += digit;
+            shouldDouble = !shouldDouble;
+        }
+        return (sum % 10 === 0);
+    }
+	
+    const emailInput = document.getElementById("email");
+    const phoneInput = document.getElementById("phone");
+    const sirenInput = document.getElementById("siren");
+	
+	//Reset des erreurs
+	emailInput.addEventListener("input", function () {
+		emailInput.setCustomValidity("");
+	});
+	phoneInput.addEventListener("input", function () {
+		phoneInput.setCustomValidity("");
+	});
+	sirenInput.addEventListener("input", function () {
+		sirenInput.setCustomValidity("");
+	});
+
+    //Vérification Email / Telephone / Siren
+    emailInput.addEventListener("blur", function () {
+        if (emailInput.value.trim() !== "" && !emailRegex.test(emailInput.value)) {
+            emailInput.setCustomValidity(ERRORS.email);
+        } else {
+            emailInput.setCustomValidity("");
+        }
+        emailInput.reportValidity();
+    });
+
+    phoneInput.addEventListener("blur", function () {
+        if (phoneInput.value.trim() !== "" && !phoneRegex.test(phoneInput.value)) {
+            phoneInput.setCustomValidity(ERRORS.phone);
+        } else {
+            phoneInput.setCustomValidity("");
+        }
+        phoneInput.reportValidity();
+    });
+
+    sirenInput.addEventListener("blur", function () {
+        const val = sirenInput.value;
+        if (val !== "" && (!/^\d{9}$/.test(val) || !isValidLuhn(val))) {
+            sirenInput.setCustomValidity(ERRORS.siren);
+        } else {
+            sirenInput.setCustomValidity("");
+        }
+        sirenInput.reportValidity();
+    });
+
+    // Vérification finale au submit
+    form.addEventListener("submit", function (e) {
+        let valid = true;
+        if (!emailRegex.test(emailInput.value)) {
+            emailInput.setCustomValidity(ERRORS.email);
+            emailInput.reportValidity();
+            valid = false;
+        }
+        if (!phoneRegex.test(phoneInput.value)) {
+            phoneInput.setCustomValidity(ERRORS.phone);
+            phoneInput.reportValidity();
+            valid = false;
+        }
+        const sirenVal = sirenInput.value;
+        if (!/^\d{9}$/.test(sirenVal) || !isValidLuhn(sirenVal)) {
+            sirenInput.setCustomValidity(ERRORS.siren);
+            sirenInput.reportValidity();
+            valid = false;
+        }
+
+        if (!valid) {
+            e.preventDefault();
+        }
+    });
+});
+
+</script>
+</body>
