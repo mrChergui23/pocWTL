@@ -77,14 +77,21 @@
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
+    
     // Prevent submit if recaptcha not completed
     function validateRecaptcha() {
-        var response = grecaptcha.getResponse();
+    const response = grecaptcha.getResponse();
+    const errorDiv = document.getElementById("recaptchaError");
+
         if (response.length === 0) {
-        alert("Please verify that you are not a robot before submitting.");
-        return false; // Block the submission
+            errorDiv.textContent = "Veuillez vérifier que vous n’êtes pas un robot avant de soumettre le formulaire.";
+            errorDiv.style.display = "block";
+            return false;
+        } else {
+            errorDiv.textContent = "";
+            errorDiv.style.display = "none";
+            return true;
         }
-        return true; // Allow submit
     }
 
     function timestamp() {
@@ -189,6 +196,7 @@
 
     <div style="display: flex; justify-content: center;">
         <div class="g-recaptcha" data-sitekey="6Le6HvwrAAAAAMSMFfZxEZ-Ko-0BmNCL3RBfv6TA"></div>
+        <div id="recaptchaError" style="color: red; margin-top: 5px; display: none;"></div>
     </div> 
     <br />
     <div class="button-container">
