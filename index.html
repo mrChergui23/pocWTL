@@ -77,7 +77,7 @@
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
-    
+
     // Prevent submit if recaptcha not completed
     function validateRecaptcha() {
     const response = grecaptcha.getResponse();
@@ -117,7 +117,7 @@
 <!--  ----------------------------------------------------------------------  -->
 <body>
 <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DG5000005SauP" method="POST" onsubmit="return validateRecaptcha();">
-    <input type=hidden name='captcha_settings' value='{"keyname":"AFDAS_PREPROD","fallback":"true","orgId":"00DG5000005SauP","ts":""}'>
+    <input type=hidden name='captcha_settings' value='{"keyname":"TEST_ACH","fallback":"true","orgId":"00DG5000005SauP","ts":""}'>
     <input type="hidden" name="oid" value="00DG5000005SauP" />
     <input type="hidden" name="retURL" value="https://www.afdas.com" />
     <input type="hidden" id="city" name="city" value="FR" />
