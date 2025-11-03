@@ -77,6 +77,16 @@
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
+    // Prevent submit if recaptcha not completed
+    function validateRecaptcha() {
+        var response = grecaptcha.getResponse();
+        if (response.length === 0) {
+        alert("Please verify that you are not a robot before submitting.");
+        return false; // Block the submission
+        }
+        return true; // Allow submit
+    }
+
     function timestamp() {
         var response = document.getElementById("g-recaptcha-response");
         if (response == null || response.value.trim() == "") {
@@ -99,7 +109,7 @@
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
 <!--  ----------------------------------------------------------------------  -->
 <body>
-<form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DG5000005SauP" method="POST">
+<form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DG5000005SauP" method="POST" onsubmit="return validateRecaptcha();">
     <input type=hidden name='captcha_settings' value='{"keyname":"AFDAS_PREPROD","fallback":"true","orgId":"00DG5000005SauP","ts":""}'>
     <input type="hidden" name="oid" value="00DG5000005SauP" />
     <input type="hidden" name="retURL" value="https://www.afdas.com" />
