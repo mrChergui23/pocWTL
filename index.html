@@ -78,7 +78,6 @@
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
 
-    // Prevent submit if recaptcha not completed
     function validateRecaptcha() {
     const response = grecaptcha.getResponse();
     const errorDiv = document.getElementById("recaptchaError");
@@ -117,7 +116,7 @@
 <!--  ----------------------------------------------------------------------  -->
 <body>
 <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DG5000005SauP" method="POST" onsubmit="return validateRecaptcha();">
-    <input type=hidden name='captcha_settings' value='{"keyname":"TEST_ACH","fallback":"true","orgId":"00DG5000005SauP","ts":""}'>
+    <input type=hidden name='captcha_settings' value='{"keyname":"AFDAS_PREPROD","fallback":"true","orgId":"00DG5000005SauP","ts":""}'>
     <input type="hidden" name="oid" value="00DG5000005SauP" />
     <input type="hidden" name="retURL" value="https://www.afdas.com" />
     <input type="hidden" id="city" name="city" value="FR" />
@@ -131,8 +130,8 @@
     <!--  ----------------------------------------------------------------------  -->
     <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
     <!--  these lines if you wish to test in debug mode.                          -->
-    <input type="hidden" name="debug" value=1>
-    <input type="hidden" name="debugEmail" value="a.chergui@afdas.com">
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail" value="sf.monitoring@afdas.com"> --> 
     <!--  ----------------------------------------------------------------------  -->
 
     <label for="last_name">Nom<span class="required">*</span></label>
@@ -195,9 +194,9 @@
     </label><br/>
 
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <div class="g-recaptcha" data-sitekey="6Le6HvwrAAAAAMSMFfZxEZ-Ko-0BmNCL3RBfv6TA"></div>
+        <div class="g-recaptcha" data-sitekey="6LdoGPwrAAAAAMOnsXPThqmAZZ9pnF6bTzPFUIFa"></div>
         <div id="recaptchaError" style="color: red; margin-top: 5px; display: none; text-align: center;"></div>
-    </div> 
+    </div>
     <br />
     <div class="button-container">
         <input type="submit" name="submit" />
